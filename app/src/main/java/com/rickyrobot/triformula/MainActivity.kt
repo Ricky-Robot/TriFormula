@@ -30,5 +30,20 @@ class MainActivity : AppCompatActivity() {
             spinner.adapter = adapter
         }
 
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                // Obtener el elemento seleccionado en el Spinner
+                val selectedFormula = spinner.selectedItem.toString()
+
+                // Actualizar el TextView con el elemento seleccionado
+                binding.textoSpinner.text = selectedFormula
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Maneja el caso en que no se selecciona nada
+                binding.textoSpinner.text = resources.getString(R.string.item_default)
+            }
+        }
+
     }
 }
