@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.EditText
+import android.widget.Toast
 import com.rickyrobot.triformula.databinding.ActivityMainBinding
 import kotlin.math.pow
 
@@ -108,7 +109,14 @@ class MainActivity : AppCompatActivity() {
         botonCalcular.setOnClickListener{
             var textoResultado = resources.getString(R.string.Resultado) + "\n"
 
-            if(esReglaTres){
+            if(ingresarVar1.text.toString() == ""
+                || ingresarVar2.text.toString() == ""
+                || ingresarVar3.text.toString() == "" ){
+
+                val mensajeError = resources.getString(R.string.error_null)
+                Toast.makeText(this, mensajeError, Toast.LENGTH_SHORT).show()
+            }
+            else if(esReglaTres){
                 textoResultado += "%.2f".format(calcularReglaTres())
                 binding.textoResultado.text = textoResultado
             }
