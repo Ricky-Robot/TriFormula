@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.EditText
 import com.rickyrobot.triformula.databinding.ActivityMainBinding
 import kotlin.math.pow
 
@@ -37,6 +38,17 @@ class MainActivity : AppCompatActivity() {
             spinner.adapter = adapter
         }
 
+        val ingresarVar1 = binding.ingresaVar1
+        val ingresarVar2 = binding.ingresaVar2
+        val ingresarVar3 = binding.ingresaVar3
+        val maxDigitsBeforeDecimal = 11
+        val maxDigitsAfterDecimal = 2
+        val inputFilter = DecimalDigitsInputFilter(maxDigitsBeforeDecimal, maxDigitsAfterDecimal)
+
+        ingresarVar1.filters = arrayOf(inputFilter)
+        ingresarVar2.filters = arrayOf(inputFilter)
+        ingresarVar3.filters = arrayOf(inputFilter)
+
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val selectedFormula = spinner.selectedItem.toString()
@@ -46,9 +58,9 @@ class MainActivity : AppCompatActivity() {
                 binding.etVar3.visibility = View.VISIBLE
                 binding.ingresaVar3.visibility = View.VISIBLE
 
-                binding.ingresaVar1.text = null
-                binding.ingresaVar2.text = null
-                binding.ingresaVar3.text = null
+                ingresarVar1.text = null
+                ingresarVar2.text = null
+                ingresarVar3.text = null
 
 
                 if (selectedFormula == opcionesFormulas[0]){
@@ -81,7 +93,7 @@ class MainActivity : AppCompatActivity() {
                     binding.etVar2.text = resources.getString(R.string.var_V)
 
                     binding.etVar3.visibility = View.INVISIBLE
-                    binding.ingresaVar3.visibility = View.INVISIBLE
+                    ingresarVar3.visibility = View.INVISIBLE
                 }
             }
 
@@ -100,11 +112,11 @@ class MainActivity : AppCompatActivity() {
                 binding.textoResultado.text = textoResultado
             }
             else if(esInteresCompuesto){
-                textoResultado += "%.2f".format(calcularReglaTres())
+                textoResultado += "%.2f".format(calcularInteresCompuesto())
                 binding.textoResultado.text = textoResultado
             }
             else if(esDensidad){
-                textoResultado += "%.2f".format(calcularReglaTres())
+                textoResultado += "%.2f".format(calcularDensidad())
                 binding.textoResultado.text = textoResultado
             }
 
