@@ -10,6 +10,7 @@
     <string name="var_m">m</string>
     <string name="var_V">V</string>
     <string name="calcular">Calcular</string>
+    <string name="limpiar">Limpiar</string>
     <string name="Resultado">Resultado:</string>
     <string name="error_null">Error: Es necesario ingresar valores en todas las variables."</string>
     <string name="error_divCero">Error: No se puede dividir sobre cero."</string>

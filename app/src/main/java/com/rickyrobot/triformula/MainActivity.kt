@@ -162,7 +162,16 @@ class MainActivity : AppCompatActivity() {
                     binding.textoResultado.text = textoResultado
                 }
             }
+        }
 
+        val botonLimpiar = binding.botonLimpiar
+
+        botonLimpiar.setOnClickListener {
+            ingresarVar1.text = null
+            ingresarVar2.text = null
+            ingresarVar3.text = null
+
+            binding.textoResultado.text = ""
         }
 
     }
