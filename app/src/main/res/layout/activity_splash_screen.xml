@@ -23,7 +23,7 @@
         android:id="@+id/splashVersion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/autor"
         android:textAlignment="center"
         android:textColor="#F3F4F3"
         android:textSize="16sp"
@@ -49,15 +49,14 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963"
-        tools:text="@string/version" />
+        app:layout_constraintVertical_bias="0.963" />
 
     <TextView
         android:id="@+id/splashVersion3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
-        android:text="@string/autor"
+        android:text="@string/app_name"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="#A7EC9F"
@@ -67,6 +66,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.145"
-        tools:text="@string/app_name" />
+        app:layout_constraintVertical_bias="0.145" />
 </androidx.constraintlayout.widget.ConstraintLayout>
