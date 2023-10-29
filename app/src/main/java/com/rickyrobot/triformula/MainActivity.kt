@@ -56,12 +56,13 @@ class MainActivity : AppCompatActivity() {
 
                 binding.textoSpinner.text = selectedFormula
                 binding.etVar3.visibility = View.VISIBLE
-                binding.ingresaVar3.visibility = View.VISIBLE
+                ingresarVar3.visibility = View.VISIBLE
 
                 ingresarVar1.text = null
                 ingresarVar2.text = null
                 ingresarVar3.text = null
 
+                binding.textoResultado.text = null
 
                 if (selectedFormula == opcionesFormulas[0]){
                     binding.imagenFormula.setImageResource(R.drawable.regladetres)
@@ -137,9 +138,7 @@ class MainActivity : AppCompatActivity() {
         val i = binding.ingresaVar2.text.toString().toDouble()
         val n = binding.ingresaVar3.text.toString().toDouble()
 
-        val base = Ci * (1 + i)
-
-        return base.pow(n)
+        return Ci * (1 + i).pow(n)
     }
 
     private fun calcularDensidad(): Double{
