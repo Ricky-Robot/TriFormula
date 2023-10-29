@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="autor">Created by: Ricardo Ruelas</string>
+    <string name="version">Version 1.0.0</string>
+    <string name="item_default">Select a formula</string>
+    <string name="calcular">Calculate</string>
+    <string name="limpiar">Clean</string>
+    <string name="Resultado">Result</string>
+    <string name="error_null">Error: It is necessary to enter values in all variables.</string>
+    <string name="error_divCero">Error: Cannot divide by zero.</string>
+    <string name="error_capitalCeroNegativo">Error: Initial capital cannot be zero or negative.</string>
+    <string name="error_tasaCeroNegativa">Error: Interest rate cannot be zero or negative.</string>
+    <string name="error_periodoNegativo">Error: Period cannot be negative.</string>
+    <string name="error_masaCeroNegativa">Error: Mass cannot be zero or negative.</string>
+    <string name="error_volumenCeroNegativo">Error: Volume cannot be zero or negative.</string>
+
+    <string-array name="formulas">
+        <item>Rule of 3</item>
+        <item>Compounded Interest</item>
+        <item>Density</item>
+    </string-array>
+</resources>

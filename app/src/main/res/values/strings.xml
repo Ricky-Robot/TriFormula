@@ -1,17 +1,17 @@
 <resources>
-    <string name="app_name">TriFormula</string>
+    <string name="app_name" translatable="false">TriFormula</string>
     <string name="autor">Creada por: Ricardo Ruelas</string>
-    <string name="version">Version 1.0.0</string>
+    <string name="version">Versión 1.0.0</string>
 
     <string name="item_default">Selecciona una formula</string>
-    <string name="var_a">a</string>
-    <string name="var_b">b</string>
-    <string name="var_c">c</string>
-    <string name="var_Ci">Ci</string>
-    <string name="var_i">i</string>
-    <string name="var_n">n</string>
-    <string name="var_m">m</string>
-    <string name="var_V">V</string>
+    <string name="var_a" translatable="false">a</string>
+    <string name="var_b" translatable="false">b</string>
+    <string name="var_c" translatable="false">c</string>
+    <string name="var_Ci" translatable="false">Ci</string>
+    <string name="var_i" translatable="false">i</string>
+    <string name="var_n" translatable="false">n</string>
+    <string name="var_m" translatable="false">m</string>
+    <string name="var_V" translatable="false">V</string>
     <string name="calcular">Calcular</string>
     <string name="limpiar">Limpiar</string>
     <string name="Resultado">Resultado:</string>
