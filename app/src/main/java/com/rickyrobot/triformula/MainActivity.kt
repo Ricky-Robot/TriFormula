@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.rickyrobot.triformula.databinding.ActivityMainBinding
+import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
 
@@ -89,5 +90,50 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        val botonCalcular = binding.botonCalcular
+
+        botonCalcular.setOnClickListener{
+            var textoResultado = resources.getString(R.string.Resultado) + "\n"
+
+            if(esReglaTres){
+                textoResultado += "%.2f".format(calcularReglaTres())
+                binding.textoResultado.text = textoResultado
+            }
+            else if(esInteresCompuesto){
+                textoResultado += "%.2f".format(calcularReglaTres())
+                binding.textoResultado.text = textoResultado
+            }
+            else if(esDensidad){
+                textoResultado += "%.2f".format(calcularReglaTres())
+                binding.textoResultado.text = textoResultado
+            }
+
+        }
+
+    }
+
+    private fun calcularReglaTres(): Double {
+        val a = binding.ingresaVar1.text.toString().toDouble()
+        val b = binding.ingresaVar2.text.toString().toDouble()
+        val c = binding.ingresaVar3.text.toString().toDouble()
+
+        return (b * c) / a
+    }
+
+    private fun calcularInteresCompuesto(): Double{
+        val Ci = binding.ingresaVar1.text.toString().toDouble()
+        val i = binding.ingresaVar2.text.toString().toDouble()
+        val n = binding.ingresaVar3.text.toString().toDouble()
+
+        val base = Ci * (1 + i)
+
+        return base.pow(n)
+    }
+
+    private fun calcularDensidad(): Double{
+        val m = binding.ingresaVar1.text.toString().toDouble()
+        val V = binding.ingresaVar2.text.toString().toDouble()
+
+        return m/V
     }
 }

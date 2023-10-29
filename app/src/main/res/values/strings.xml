@@ -9,6 +9,8 @@
     <string name="var_n">n</string>
     <string name="var_m">m</string>
     <string name="var_V">V</string>
+    <string name="calcular">Calcular</string>
+    <string name="Resultado">Resultado:</string>
 
     <string-array name="formulas">
         <item>Regla de 3</item>
