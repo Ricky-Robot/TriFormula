@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">TriFormula</string>
+    <string name="autor">Creada por: Ricardo Ruelas</string>
+    <string name="version">Version 1.0.0</string>
+
     <string name="item_default">Selecciona una formula</string>
     <string name="var_a">a</string>
     <string name="var_b">b</string>
