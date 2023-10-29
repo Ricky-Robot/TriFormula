@@ -109,6 +109,10 @@ class MainActivity : AppCompatActivity() {
         botonCalcular.setOnClickListener{
             var textoResultado = resources.getString(R.string.Resultado) + "\n"
 
+            if(esDensidad){
+                ingresarVar3.text = ingresarVar2.text
+            }
+
             if(ingresarVar1.text.toString() == ""
                 || ingresarVar2.text.toString() == ""
                 || ingresarVar3.text.toString() == "" ){
@@ -117,16 +121,46 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, mensajeError, Toast.LENGTH_SHORT).show()
             }
             else if(esReglaTres){
-                textoResultado += "%.2f".format(calcularReglaTres())
-                binding.textoResultado.text = textoResultado
+                if(ingresarVar1.text.toString().toDouble() == 0.0){
+                    val mensajeError = resources.getString(R.string.error_divCero)
+                    Toast.makeText(this, mensajeError, Toast.LENGTH_SHORT).show()
+                }
+                else {
+                    textoResultado += "%.2f".format(calcularReglaTres())
+                    binding.textoResultado.text = textoResultado
+                }
             }
             else if(esInteresCompuesto){
-                textoResultado += "%.2f".format(calcularInteresCompuesto())
-                binding.textoResultado.text = textoResultado
+                if(ingresarVar1.text.toString().toDouble() < 0.0){
+                    val mensajeError = resources.getString(R.string.error_capitalCeroNegativo)
+                    Toast.makeText(this, mensajeError, Toast.LENGTH_SHORT).show()
+                }
+                else if(ingresarVar2.text.toString().toDouble() <= 0.0){
+                    val mensajeError = resources.getString(R.string.error_tasaCeroNegativa)
+                    Toast.makeText(this, mensajeError, Toast.LENGTH_SHORT).show()
+                }
+                else if(ingresarVar3.text.toString().toDouble() < 0.0){
+                    val mensajeError = resources.getString(R.string.error_periodoNegativo)
+                    Toast.makeText(this, mensajeError, Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    textoResultado += "%.2f".format(calcularInteresCompuesto())
+                    binding.textoResultado.text = textoResultado
+                }
             }
             else if(esDensidad){
-                textoResultado += "%.2f".format(calcularDensidad())
-                binding.textoResultado.text = textoResultado
+                if(ingresarVar1.text.toString().toDouble() <= 0.0){
+                    val mensajeError = resources.getString(R.string.error_masaCeroNegativa)
+                    Toast.makeText(this, mensajeError, Toast.LENGTH_SHORT).show()
+                }
+                else if(ingresarVar2.text.toString().toDouble() <= 0.0){
+                    val mensajeError = resources.getString(R.string.error_volumenCeroNegativo)
+                    Toast.makeText(this, mensajeError, Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    textoResultado += "%.2f".format(calcularDensidad())
+                    binding.textoResultado.text = textoResultado
+                }
             }
 
         }

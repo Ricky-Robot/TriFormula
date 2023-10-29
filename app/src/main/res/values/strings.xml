@@ -12,6 +12,12 @@
     <string name="calcular">Calcular</string>
     <string name="Resultado">Resultado:</string>
     <string name="error_null">Error: Es necesario ingresar valores en todas las variables."</string>
+    <string name="error_divCero">Error: No se puede dividir sobre cero."</string>
+    <string name="error_capitalCeroNegativo">Error: El capital inicial no puede ser cero o negativo."</string>
+    <string name="error_tasaCeroNegativa">Error: La tasa de interes no puede ser cero o negativa."</string>
+    <string name="error_periodoNegativo">Error: El periodo no puede ser negativo."</string>
+    <string name="error_masaCeroNegativa">Error: La masa no puede ser cero o negativa."</string>
+    <string name="error_volumenCeroNegativo">Error: El volumen no puede ser cero o negativo."</string>
 
     <string-array name="formulas">
         <item>Regla de 3</item>
