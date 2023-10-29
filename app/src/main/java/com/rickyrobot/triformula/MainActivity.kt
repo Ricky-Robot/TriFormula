@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import com.rickyrobot.triformula.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -24,23 +23,29 @@ class MainActivity : AppCompatActivity() {
             R.array.formulas,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
-            // Specify the layout to use when the list of choices appears.
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner.
             spinner.adapter = adapter
         }
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                // Obtener el elemento seleccionado en el Spinner
                 val selectedFormula = spinner.selectedItem.toString()
+                val opcionesFormulas = resources.getStringArray(R.array.formulas)
 
-                // Actualizar el TextView con el elemento seleccionado
                 binding.textoSpinner.text = selectedFormula
+
+                if (selectedFormula == opcionesFormulas[0]){
+                    binding.imagenFormula.setImageResource(R.drawable.regladetres)
+                }
+                else if(selectedFormula == opcionesFormulas[1]){
+                    binding.imagenFormula.setImageResource(R.drawable.interescompuesto)
+                }
+                else if(selectedFormula == opcionesFormulas[2]){
+                    binding.imagenFormula.setImageResource(R.drawable.densidad)
+                }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                // Maneja el caso en que no se selecciona nada
                 binding.textoSpinner.text = resources.getString(R.string.item_default)
             }
         }
